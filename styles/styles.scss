@@ -1,0 +1,135 @@
+// Front-end Style Guide
+
+//? Layout
+
+
+//? Colors
+
+    $veryDarkGray: hsl(210, 100%, 0%);
+    $darkGray: hsl(0, 0%, 59%);
+    $titleAndBgColor: white;
+
+
+//? Padding and margin and border-radius
+
+    $varBorderRadius:2rem;
+    $varPaddingOne:1rem;
+    $varPaddingTwo: 2rem;
+    $varPaddingThree:3rem;
+ 
+//? Font
+    
+    $fontWeightNormal: 400;
+    $fontWeightFiveHundered:500;
+    $fontWeightBold:700;
+
+    $fontsizeTitle:2.6rem;
+    $fontsizeSmall:1.4rem;
+    $fontsizeNormal:1.8rem;
+    $fontSizeTextInput: 1.8rem;
+
+    
+*, *::after,*::before { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+html { 
+    font-size: 10px;
+    min-height: 100vh;
+
+    body { 
+        min-height: inherit;
+        main   { 
+            display: flex;
+            flex-direction: column;
+            min-height: inherit;
+            .form { 
+                flex-grow: 0;
+                z-index: 10;
+                background-image: url(/images/pattern-bg.png);
+                background-size: cover;
+                height: 34rem;
+
+            .IpInputContainer { 
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                color: $titleAndBgColor;
+                padding: $varPaddingTwo;
+                h1  { 
+                    padding: $varPaddingTwo;
+                    font-size: $fontsizeTitle;
+                font-weight: $fontWeightFiveHundered;
+                }
+
+                .inputSection { 
+                    width: 100%;
+                    display: flex;
+                    border-radius: $varBorderRadius;
+                    overflow: hidden;
+
+                    .ipInput { 
+                        flex-basis: 100%;
+                        padding: $varPaddingTwo;
+                        font-size: $fontSizeTextInput;
+                            
+                        }
+                        .placeholderRed::placeholder { 
+                                color: red;
+                        }
+                        button{
+                            border: none;
+                            background-color: $veryDarkGray;
+                            padding: $varPaddingTwo $varPaddingThree;
+                            background-image: url(/images/icon-arrow.svg);
+                            background-repeat:no-repeat;
+                            background-position: center;
+                            transition: 0.2s ease-in-out;
+                            cursor: pointer;
+                            &:hover { 
+                                filter: invert(1);
+                            }
+                        }
+                }
+            }
+            .resultContainer { 
+                background-color:$titleAndBgColor;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: $varPaddingThree;
+                padding: $varPaddingThree;
+                border-radius:$varBorderRadius ;
+                .returnedResults { 
+                    text-align: center;
+                    border: none;
+                    h2 { 
+                        color: $darkGray;
+                        text-transform: uppercase;
+                        letter-spacing: 0.2rem;
+                        font-size: $fontsizeSmall;
+                        padding: $varPaddingOne;
+                    }
+                    .resultInputs { 
+                        text-align: center;
+                        border: none;
+                        font-size: $fontSizeTextInput;
+                        &:disabled { 
+                            background-color: $titleAndBgColor;
+                            color: $veryDarkGray;
+                        }
+                    }
+                }
+            }
+           }
+           .mapID {
+               flex-grow:1 ;
+            z-index: 0;
+            }
+        }
+    }
+}
+
