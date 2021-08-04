@@ -27,30 +27,30 @@
       <section class="IpInputContainer">
         <h1>IP Address Tracker</h1>
         <section class="inputSection">
-          <input autofocus  class="ipInput" type="text" placeholder="Search for any IP or domain" > 
-          <button type="submit"  ></button> 
+          <input  autofocus id="ipInput"   class="ipInput" type="text" placeholder="Search for IPs or Domains" > 
+          <button type="button"  id="ipInputSumbit"></button> 
         </section>
       </section>
       
       <section class="resultContainer "> 
         <section class="returnedResults">
           <h2>IP Address</h2>
-          <input disabled type="text" class="resultInputs" placeholder="-">
+          <input id="ipAdress" disabled type="text" class="resultInputs" placeholder="-">
         </section>
   
         <section class="returnedResults">
           <h2>Location</h2> 
-          <input disabled type="text" class="resultInputs" placeholder="-">
+          <input id="location" disabled type="text" class="resultInputs" placeholder="-">
         </section>
   
         <section class="returnedResults ">
           <h2>Timezone</h2>
-          <input disabled type="text" class="resultInputs" placeholder="-">
+          <input id="timezone" disabled type="text" class="resultInputs" placeholder="-" >
         </section>
   
         <section class="returnedResults ">
           <h2>ISP</h2>
-          <input disabled type="text" class="resultInputs" placeholder="-">
+          <input id="isp" disabled type="text" class="resultInputs" placeholder="-">
         </section>
   
       </section>
@@ -64,18 +64,6 @@
 
  
   <script src="./script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript">
-      var ip = "8.8.8.8";
-      $(function () {
-         $.ajax({
-             url: "https://geo.ipify.org/api/v1",
-             data: {apiKey: api_key, ipAddress: ip},
-             success: function(data) {
-                 $("body").append("<pre>"+ JSON.stringify(data,"",2)+"</pre>");
-             }
-         });
-      });
-  </script>
+  <script src="./require.js"></script>
 </body>
 </html>

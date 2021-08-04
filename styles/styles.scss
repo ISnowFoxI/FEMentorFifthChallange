@@ -2,10 +2,6 @@
 
 //? Layout
 
- //*The designs were created to the following widths:
-
-// Mobile: 375px
-// Desktop: 1440px
 
 //? Colors
 
@@ -38,23 +34,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
-
-
 }
 
 html { 
     font-size: 10px;
-    body { 
+    min-height: 100vh;
 
+    body { 
+        min-height: inherit;
         main   { 
             display: flex;
             flex-direction: column;
-
-
+            min-height: inherit;
             .form { 
-
-                display:flex;
-                flex-direction: column;    
+                flex-grow: 0;
+                z-index: 10;
                 background-image: url(/images/pattern-bg.png);
                 background-size: cover;
                 height: 34rem;
@@ -69,7 +63,6 @@ html {
                     padding: $varPaddingTwo;
                     font-size: $fontsizeTitle;
                 font-weight: $fontWeightFiveHundered;
-
                 }
 
                 .inputSection { 
@@ -83,6 +76,9 @@ html {
                         padding: $varPaddingTwo;
                         font-size: $fontSizeTextInput;
                             
+                        }
+                        .placeholderRed::placeholder { 
+                                color: red;
                         }
                         button{
                             border: none;
@@ -99,10 +95,7 @@ html {
                         }
                 }
             }
-
             .resultContainer { 
-                z-index: 10;
-
                 background-color:$titleAndBgColor;
                 display: flex;
                 flex-direction: column;
@@ -113,7 +106,6 @@ html {
                 .returnedResults { 
                     text-align: center;
                     border: none;
-
                     h2 { 
                         color: $darkGray;
                         text-transform: uppercase;
@@ -132,20 +124,12 @@ html {
                     }
                 }
             }
-
-
-
            }
-
-           .mapID { 
-            min-height: 50rem;
+           .mapID {
+               flex-grow:1 ;
             z-index: 0;
             }
         }
-    
-    
     }
-    
-
-
 }
+
