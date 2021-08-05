@@ -1,4 +1,4 @@
-console.log(process.env.API_KEY)
+import 'regenerator-runtime/runtime'
 
 
 const ipInput = document.getElementById("ipInput");
@@ -57,9 +57,7 @@ const getIp = () => {
 }
 
 const getIpInfo = async (ipInputValue) => {
-    ip = ipInputValue;
-    console.log(ip)
-    url = api_url + 'apiKey=' + process.env.api_key + '&ipAddress=' + ip;
+    url = api_url + 'apiKey=' + process.env.API_KEY + '&ipAddress=' + ipInputValue;
     info = await fetch(url).then(response => response.json()).then(data => data)
     onload()
 }
