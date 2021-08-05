@@ -14,6 +14,7 @@
 
     $varBorderRadius:2rem;
     $varPaddingOne:1rem;
+    $varPaddingOneFive:1.5rem;
     $varPaddingTwo: 2rem;
     $varPaddingThree:3rem;
  
@@ -24,8 +25,9 @@
     $fontWeightBold:700;
 
     $fontsizeTitle:2.6rem;
-    $fontsizeSmall:1.4rem;
-    $fontsizeNormal:1.8rem;
+    $fontsizeSmall:1rem;
+    $fontsizeBig:2rem;
+    $fontsizeNormal:1.4rem;
     $fontSizeTextInput: 1.8rem;
 
     
@@ -38,7 +40,8 @@
 
 html { 
     font-size: 10px;
-    min-height: 100vh;
+    min-height: 200vh;
+    scroll-behavior: smooth;
 
     body { 
         min-height: inherit;
@@ -46,12 +49,14 @@ html {
             display: flex;
             flex-direction: column;
             min-height: inherit;
+
+
             .form { 
                 flex-grow: 0;
                 z-index: 10;
                 background-image: url(/images/pattern-bg.png);
                 background-size: cover;
-                height: 34rem;
+                height: 30rem;
 
             .IpInputContainer { 
                 display: flex;
@@ -73,9 +78,12 @@ html {
 
                     .ipInput { 
                         flex-basis: 100%;
-                        padding: $varPaddingTwo;
+                        padding: $varPaddingOneFive;
                         font-size: $fontSizeTextInput;
-                            
+
+                            &:focus-visible { 
+                                outline: none;
+                            }
                         }
                         .placeholderRed::placeholder { 
                                 color: red;
@@ -90,7 +98,8 @@ html {
                             transition: 0.2s ease-in-out;
                             cursor: pointer;
                             &:hover { 
-                                filter: invert(1);
+                                
+                                background-color: $darkGray;
                             }
                         }
                 }
@@ -100,23 +109,32 @@ html {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                margin: $varPaddingThree;
-                padding: $varPaddingThree;
+                margin: 0 $varPaddingTwo;
+                padding: 0  $varPaddingTwo $varPaddingTwo;
                 border-radius:$varBorderRadius ;
                 .returnedResults { 
                     text-align: center;
                     border: none;
+                    width: 100%;
+                    &:first-child { 
+                        padding-top: $varPaddingTwo;
+                    }
+
                     h2 { 
                         color: $darkGray;
                         text-transform: uppercase;
                         letter-spacing: 0.2rem;
                         font-size: $fontsizeSmall;
-                        padding: $varPaddingOne;
+                        padding: 0 0 $varPaddingOne 0;
                     }
                     .resultInputs { 
+                        
+                        resize: none;
                         text-align: center;
                         border: none;
                         font-size: $fontSizeTextInput;
+                        width: 100%;
+                        font-weight: $fontWeightFiveHundered;
                         &:disabled { 
                             background-color: $titleAndBgColor;
                             color: $veryDarkGray;
@@ -125,11 +143,84 @@ html {
                 }
             }
            }
+
            .mapID {
                flex-grow:1 ;
             z-index: 0;
+            }
+
+            .goToTop { 
+                z-index: 100;
+                position: fixed;
+                border: none;
+                background-color: $veryDarkGray;
+                padding:  $varPaddingThree;
+                background-image: url(/images/icon-arrow.svg);
+                background-repeat:no-repeat;
+                background-position: center;
+                transition: 0.2s ease-in-out;
+                transform: rotateZ(-90deg);
+                border-radius: 50%;
+                cursor: pointer;
+                bottom: 1rem;
+                right: 1rem;
+                &:hover { 
+                    
+                    background-color: $darkGray;
+                }
             }
         }
     }
 }
 
+
+@media only screen  and (min-width:1050px) {
+
+    html { 
+      
+    
+        body { 
+            main   { 
+              
+    
+    
+                .form { 
+                   
+                    height: 24rem;
+                .IpInputContainer { 
+                    margin: 0 20%;
+                }
+                .resultContainer { 
+                    padding: $varPaddingThree $varPaddingTwo ;
+                   flex-direction: row;
+                   align-items: flex-start;
+                   min-height: 13rem;
+                   margin: 0 10% ;
+                   .returnedResults { 
+                       text-align: left;
+                        border-right: 1px solid $darkGray;
+                        margin:0 $varPaddingOne;
+                        padding: $varPaddingOne;
+
+                        h2 { 
+                            padding-top: 0;
+                            font-size: $fontsizeNormal;
+                        }
+                        .resultInputs { 
+                            text-align: left;
+                            font-size: $fontsizeBig;
+                        }
+                    }
+                    .returnedResults:last-child { 
+                        border: none;
+                    }
+
+                }
+               }
+    
+               
+            }
+        }
+    }
+    
+}

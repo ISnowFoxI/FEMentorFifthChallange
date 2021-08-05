@@ -30,7 +30,7 @@
     <main>
       <form class="form">
         <section class="IpInputContainer">
-          <h1>IP Address Tracker</h1>
+          <h1 id="title">IP Address Tracker</h1>
           <section class="inputSection">
             <input
               autofocus
@@ -46,26 +46,27 @@
         <section class="resultContainer">
           <section class="returnedResults">
             <h2>IP Address</h2>
-            <input id="ipAdress" disabled type="text" class="resultInputs" placeholder="-" />
+            <textarea name="results"cols="30" rows="2" id="ipAdress" disabled type="text" class="resultInputs" placeholder="-"></textarea>
           </section>
 
           <section class="returnedResults">
             <h2>Location</h2>
-            <input id="location" disabled type="text" class="resultInputs" placeholder="-" />
+            <textarea name="results"cols="30" rows="2" id="location" disabled type="text" class="resultInputs" placeholder="-"></textarea>
           </section>
 
           <section class="returnedResults">
             <h2>Timezone</h2>
-            <input id="timezone" disabled type="text" class="resultInputs" placeholder="-" />
+            <textarea name="results"  cols="30" rows="2" id="timezone" disabled type="text" class="resultInputs" placeholder="-"></textarea>
           </section>
 
           <section class="returnedResults">
             <h2>ISP</h2>
-            <input id="isp" disabled type="text" class="resultInputs" placeholder="-" />
+            <textarea name="results"  cols="30" rows="2" id="isp" disabled type="text" class="resultInputs" placeholder="-"></textarea>
           </section>
         </section>
       </form>
       <div id="mapid" class="mapID"></div>
+      <a type="button" href="#title" class="goToTop"></a>
     </main>
 
     <script src="./index.js"></script>

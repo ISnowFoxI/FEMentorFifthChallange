@@ -8,7 +8,8 @@
 
 html {
   font-size: 10px;
-  min-height: 100vh;
+  min-height: 200vh;
+  scroll-behavior: smooth;
 }
 
 html body {
@@ -33,7 +34,7 @@ html body main .form {
   z-index: 10;
   background-image: url(/images/pattern-bg.png);
   background-size: cover;
-  height: 34rem;
+  height: 30rem;
 }
 
 html body main .form .IpInputContainer {
@@ -69,8 +70,12 @@ html body main .form .IpInputContainer .inputSection {
 html body main .form .IpInputContainer .inputSection .ipInput {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  padding: 2rem;
+  padding: 1.5rem;
   font-size: 1.8rem;
+}
+
+html body main .form .IpInputContainer .inputSection .ipInput:focus-visible {
+  outline: none;
 }
 
 html body main .form .IpInputContainer .inputSection .placeholderRed::-webkit-input-placeholder {
@@ -102,8 +107,7 @@ html body main .form .IpInputContainer .inputSection button {
 }
 
 html body main .form .IpInputContainer .inputSection button:hover {
-  -webkit-filter: invert(1);
-          filter: invert(1);
+  background-color: #969696;
 }
 
 html body main .form .resultContainer {
@@ -118,28 +122,36 @@ html body main .form .resultContainer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 3rem;
-  padding: 3rem;
+  margin: 0 2rem;
+  padding: 0 2rem 2rem;
   border-radius: 2rem;
 }
 
 html body main .form .resultContainer .returnedResults {
   text-align: center;
   border: none;
+  width: 100%;
+}
+
+html body main .form .resultContainer .returnedResults:first-child {
+  padding-top: 2rem;
 }
 
 html body main .form .resultContainer .returnedResults h2 {
   color: #969696;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  font-size: 1.4rem;
-  padding: 1rem;
+  font-size: 1rem;
+  padding: 0 0 1rem 0;
 }
 
 html body main .form .resultContainer .returnedResults .resultInputs {
+  resize: none;
   text-align: center;
   border: none;
   font-size: 1.8rem;
+  width: 100%;
+  font-weight: 500;
 }
 
 html body main .form .resultContainer .returnedResults .resultInputs:disabled {
@@ -152,5 +164,66 @@ html body main .mapID {
       -ms-flex-positive: 1;
           flex-grow: 1;
   z-index: 0;
+}
+
+html body main .goToTop {
+  z-index: 100;
+  position: fixed;
+  border: none;
+  background-color: black;
+  padding: 3rem;
+  background-image: url(/images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+  border-radius: 50%;
+  cursor: pointer;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+html body main .goToTop:hover {
+  background-color: #969696;
+}
+
+@media only screen and (min-width: 1050px) {
+  html body main .form {
+    height: 24rem;
+  }
+  html body main .form .IpInputContainer {
+    margin: 0 20%;
+  }
+  html body main .form .resultContainer {
+    padding: 3rem 2rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    min-height: 13rem;
+    margin: 0 10%;
+  }
+  html body main .form .resultContainer .returnedResults {
+    text-align: left;
+    border-right: 1px solid #969696;
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+  html body main .form .resultContainer .returnedResults h2 {
+    padding-top: 0;
+    font-size: 1.4rem;
+  }
+  html body main .form .resultContainer .returnedResults .resultInputs {
+    text-align: left;
+    font-size: 2rem;
+  }
+  html body main .form .resultContainer .returnedResults:last-child {
+    border: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

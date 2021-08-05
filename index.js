@@ -4,10 +4,10 @@ import 'regenerator-runtime/runtime'
 const ipInput = document.getElementById("ipInput");
 const ipInputSubmit = document.getElementById("ipInputSumbit");
 
-const disabledInputIpAdress = document.getElementById("ipAdress")
-const disabledInputLocation = document.getElementById("location")
-const disabledInputTimezone = document.getElementById("timezone")
-const disabledInputIsp = document.getElementById("isp")
+const disbaledTextareaIpAdress = document.getElementById("ipAdress")
+const disbaledTextareaLocation = document.getElementById("location")
+const disbaledTextareaTimezone = document.getElementById("timezone")
+const disbaledTextareaIsp = document.getElementById("isp")
 
 let ipInputValue;
 let info = {
@@ -64,19 +64,24 @@ const getIpInfo = async (ipInputValue) => {
 
 ipInputSubmit.addEventListener("click", async () => {
     ipInputValue = await getIp();
-    console.log(ipInputValue)
-    getIpInfo(ipInputValue);
+    if(ipInputValue) { 
+        getIpInfo(ipInputValue);
+    }
+    else{
+        return
+    }
 })
 
 const onload = () => {
-    disabledInputIpAdress.value = info.ip;
-    disabledInputIsp.value = info.isp;
-    disabledInputLocation.value = `${info.location.region}, ${info.location.country} `
-    disabledInputTimezone.value = `UTC ${info.location.timezone}`
+    disbaledTextareaIpAdress.innerHTML = info.ip;
+    disbaledTextareaIsp.innerHTML = info.isp;
+    disbaledTextareaLocation.innerHTML = `${info.location.region} ${info.location.country} `
+    disbaledTextareaTimezone.innerHTML = `UTC ${info.location.timezone}`
     map.setView([info.location.lat, info.location.lng], 13)
     markerOnTheMap.setLatLng([info.location.lat, info.location.lng])
 
 }
 
-onload();
 
+
+onload();
