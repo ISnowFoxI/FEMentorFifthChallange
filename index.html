@@ -31,7 +31,7 @@
       <form class="form">
         <section class="IpInputContainer">
           <h1 id="title">IP Address Tracker</h1>
-          <section class="inputSection">
+          <div class="inputSection">
             <input
               autofocus
               id="ipInput"
@@ -40,33 +40,33 @@
               placeholder="Search for IPs or Domains"
             />
             <button type="button" id="ipInputSumbit"></button>
-          </section>
+          </div>
         </section>
 
-        <section class="resultContainer">
+        <div class="resultContainer">
           <section class="returnedResults">
             <h2>IP Address</h2>
-            <textarea name="results"cols="30" rows="2" id="ipAdress" disabled type="text" class="resultInputs" placeholder="-"></textarea>
+            <textarea name="results"cols="30" rows="2" id="ipAdress" disabled  class="resultInputs" placeholder="-"></textarea>
           </section>
 
           <section class="returnedResults">
             <h2>Location</h2>
-            <textarea name="results"cols="30" rows="2" id="location" disabled type="text" class="resultInputs" placeholder="-"></textarea>
+            <textarea name="results"cols="30" rows="2" id="location" disabled  class="resultInputs" placeholder="-"></textarea>
           </section>
 
           <section class="returnedResults">
             <h2>Timezone</h2>
-            <textarea name="results"  cols="30" rows="2" id="timezone" disabled type="text" class="resultInputs" placeholder="-"></textarea>
+            <textarea name="results"  cols="30" rows="2" id="timezone" disabled  class="resultInputs" placeholder="-"></textarea>
           </section>
 
           <section class="returnedResults">
             <h2>ISP</h2>
-            <textarea name="results"  cols="30" rows="2" id="isp" disabled type="text" class="resultInputs" placeholder="-"></textarea>
+            <textarea name="results"  cols="30" rows="2" id="isp" disabled  class="resultInputs" placeholder="-"></textarea>
           </section>
-        </section>
+        </div>
       </form>
       <div id="mapid" class="mapID"></div>
-      <a type="button" href="#title" class="goToTop"></a>
+      <a  href="#title" class="goToTop"></a>
     </main>
 
     <script src="./index.js"></script>
