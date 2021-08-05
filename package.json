@@ -1,0 +1,28 @@
+{
+  "name": "FEMentorFifthChallange",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ISnowFoxI/FEMentorFifthChallange.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ISnowFoxI/FEMentorFifthChallange/issues"
+  },
+  "homepage": "https://github.com/ISnowFoxI/FEMentorFifthChallange#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.37.5"
+  }
+}
