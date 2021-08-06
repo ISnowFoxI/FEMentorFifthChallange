@@ -62,6 +62,13 @@ const getIpInfo = async (ipInputValue) => {
     onload()
 }
 
+ipInput.addEventListener("keydown",(e)=> { 
+    if(e.code=="Enter" || e.code=="NumpadEnter"){ 
+        e.preventDefault()
+    }
+})
+
+
 ipInputSubmit.addEventListener("click", async () => {
     ipInputValue = await getIp();
     if(ipInputValue) { 
